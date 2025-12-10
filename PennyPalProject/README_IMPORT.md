@@ -1,28 +1,139 @@
-# Penny Pal JavaFX Demo (Importable Project)
+# 🪙 Penny Pal
+### Smart Monthly Budgeting Assistant (JavaFX • MVC • CSV File I/O)
 
-This is a minimal JavaFX + MVC Penny Pal demo project you can import directly into IntelliJ.
+Penny Pal is a modern budgeting application designed to help users understand their monthly income, responsibilities, expenses, and savings goals through a simple guided workflow.  
+The app walks the user step-by-step, calculates leftover income, and produces a breakdown screen similar to a financial dashboard.
 
-## How to Import in IntelliJ
+This version of the project was completed as part of a semester-long JavaFX MVC application assignment.
 
-1. Download and unzip this project.
-2. In IntelliJ:
-   - **File → New → Project from Existing Sources…**
-   - Select the unzipped `PennyPalProject` folder.
-   - Choose **Import project from existing sources** (or as a simple Gradle/Java project if you add your own build file).
-3. Make sure your **Project SDK** is set to Java 17 (or whatever your course uses).
-4. Configure JavaFX:
-   - Either via a Gradle/Maven build file **or**
-   - Manually add JavaFX libraries to the project and set VM options:
-     `--module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml`
-5. Run the `MainApp` class in the `pennypal` package.
+---
 
-## Flow
+## 📌 Features
 
-Welcome → Account → Responsibility Yes/No → Income → Results
+### ✔ Multi-Screen Guided Flow
+- Welcome screen  
+- Account creation (email)  
+- Responsibility input  
+- Monthly income input  
+- Budget summary screen  
+- Spending breakdown (with savings adjustment)  
+- Final screen with option to restart  
 
-The Results screen will show a basic summary and a **Back to Welcome Page** button with a confirmation popup, similar to your Figma prototype.
+### ✔ Clean MVC Architecture
+- **Model:** User data, expenses, calculations  
+- **View:** FXML files styled with CSS  
+- **Controller:** Handles navigation and screen logic  
 
-You can now:
-- Replace the CSV files in `src/main/resources/data/` with your real ones.
-- Extend the views and controllers with your full Penny Pal logic.
-- Push this structure into your team GitHub repo and add your README + UML.
+### ✔ JavaFX UI
+- Custom gradient UI theme  
+- Rounded cards, buttons, and input fields  
+- Responsive layout sized to mimic a mobile app  
+- Styled with `pennypal.css`
+
+### ✔ File I/O (CSV)
+The app loads external data from:  
+- `data/tax_rates.csv`  
+- `data/default_categories.csv`  
+- `data/sample_users.csv`  
+
+Using the included `CsvDataLoader` class, which demonstrates reading resource files through the classpath.
+
+### ✔ Fully Functional Navigation
+Buttons navigate between screens using the `MainApp.changeScene()` method.
+
+---
+
+## 📂 Project Structure
+
+```
+src/main/
+├── java/pennypal/
+│   ├── controller/          # All screen controllers
+│   ├── model/               # AppState, User, Expense models
+│   ├── service/             # CsvDataLoader (file I/O)
+│   ├── view/                # Navigation helpers
+│   ├── MainApp.java         # App entry point
+│   └── AppState.java        # Stores global application data
+│
+└── resources/
+    ├── fxml/                # All UI screens
+    │   ├── WelcomeView.fxml
+    │   ├── AccountView.fxml
+    │   ├── ResponsibilitiesView.fxml
+    │   ├── IncomeView.fxml
+    │   ├── ResultsView.fxml
+    │   ├── BreakdownView.fxml
+    │   └── FinalView.fxml
+    │
+    ├── css/
+    │   └── pennypal.css     # UI stylesheet
+    │
+    └── data/
+        ├── tax_rates.csv
+        ├── default_categories.csv
+        └── sample_users.csv
+```
+
+---
+
+# ▶ How to Run the Application
+
+### **Requirements**
+- **Java 17+** (Java 21 or 22 recommended)
+- **JavaFX SDK** (Your instructor likely already provided instructions)
+- IntelliJ IDEA recommended
+
+### **VM Options (Required to run JavaFX)**  
+Go to **Run → Edit Configurations → VM Options** and paste:
+
+```
+--module-path "YOUR_JAVAFX_SDK_PATH/lib" --add-modules javafx.controls,javafx.fxml
+```
+
+Example:
+
+```
+--module-path "C:\javafx-sdk-24\lib" --add-modules javafx.controls,javafx.fxml
+```
+
+---
+
+## 🚀 Running the App
+
+1. Open the project folder in IntelliJ  
+2. Mark `src/main/resources` as **Resources Root**  
+3. In the project panel, open `MainApp.java`  
+4. Click **Run → Run MainApp**  
+
+The app should open with the full styled interface.
+
+---
+
+# 🛠 Known Issues
+
+- This version does not currently store user data between runs.  
+- CSV file contents are read (to satisfy I/O requirements), but are not used in on-screen calculations.  
+- Window resizing is not restricted; UI is best viewed at the default size.
+
+---
+
+# 👨‍💻 Contributors
+
+| Name |
+|------|
+| Hudson Borden |
+| Angela Paral |
+| Naman Patel |
+
+---
+
+# 📐 UML Diagram
+
+Include your diagram file here once exported (e.g., from draw.io):  
+`docs/penny_pal_uml.png`
+
+---
+
+# 📄 License
+
+This project was created for academic purposes only.
