@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.ResultsViewController"
+      spacing="15"
+      styleClass="app-root">
+    <children>
+        <Label text="Penny Pal" styleClass="title-main"/>
+
+        <VBox spacing="8" styleClass="card-strong" prefWidth="320">
+            <children>
+                <Label text="Income" styleClass="text-white"/>
+                <Label fx:id="incomeValueLabel"
+                       style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+            </children>
+        </VBox>
+
+        <VBox spacing="6" styleClass="card" prefWidth="320">
+            <children>
+                <Label text="Rent" styleClass="text-white"/>
+                <Label fx:id="rentValueLabel" styleClass="text-white"/>
+
+                <Label text="Utilities" styleClass="text-white"/>
+                <Label fx:id="utilitiesValueLabel" styleClass="text-white"/>
+
+                <Label text="Insurance" styleClass="text-white"/>
+                <Label fx:id="insuranceValueLabel" styleClass="text-white"/>
+
+                <Label text="Student Loan" styleClass="text-white"/>
+                <Label fx:id="studentLoanValueLabel" styleClass="text-white"/>
+
+                <Label text="Transportation" styleClass="text-white"/>
+                <Label fx:id="transportationValueLabel" styleClass="text-white"/>
+
+                <Label text="Remainder"
+                       style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+                <Label fx:id="remainderValueLabel"
+                       style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+            </children>
+        </VBox>
+
+        <Button text="Next"
+                onAction="#handleNext"
+                styleClass="primary-button"/>
+
+        <Button text="Back"
+                onAction="#handleBack"
+                styleClass="secondary-button"/>
+    </children>
+</VBox>

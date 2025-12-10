@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.AccountViewController"
+      spacing="12"
+      styleClass="app-root-light">
+    <children>
+        <Label text="PENNY PAL" styleClass="title-dark"/>
+
+        <Label text="Create an account"
+               style="-fx-font-size:16; -fx-font-weight:bold;"/>
+
+        <Label text="Enter your email to sign up for this app"
+               styleClass="subtitle-dark"/>
+
+        <TextField fx:id="emailField"
+                   promptText="email@example.com"
+                   styleClass="input-field"
+                   style="-fx-pref-width:260;"/>
+
+        <Button text="Continue"
+                onAction="#handleContinue"
+                styleClass="dark-button"/>
+
+        <Label text="or" />
+
+        <Button text="Continue with Google"
+                onAction="#handleGoogleLogin"
+                styleClass="light-button"/>
+
+        <Button text="Continue with Apple"
+                onAction="#handleAppleLogin"
+                styleClass="light-button"/>
+
+        <Label text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+               wrapText="true"
+               styleClass="text-caption"/>
+
+        <Button text="Back"
+                onAction="#handleBack"
+                style="-fx-background-color:transparent; -fx-text-fill:#111827;"/>
+    </children>
+</VBox>

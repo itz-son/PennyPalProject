@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.WelcomeViewController"
+      spacing="30"
+      styleClass="app-root">
+    <children>
+        <Label text="Welcome to" styleClass="subtitle-main" />
+        <Label text="Penny Pal" styleClass="title-main" />
+
+        <StackPane>
+            <children>
+                <Circle radius="60" fill="#F6A623" stroke="#C97800" strokeWidth="4"
+                        styleClass="coin-circle"/>
+                <Label text="P" style="-fx-text-fill:#4B2500; -fx-font-size:40; -fx-font-weight:bold;"/>
+            </children>
+        </StackPane>
+
+        <Button text="Get Started"
+                onAction="#handleGetStarted"
+                styleClass="primary-button"/>
+    </children>
+</VBox>

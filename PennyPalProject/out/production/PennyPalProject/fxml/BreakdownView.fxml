@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.BreakdownViewController"
+      styleClass="app-root"
+      alignment="TOP_CENTER"
+      spacing="18">
+
+    <children>
+
+        <!-- Header row: title + month label -->
+        <HBox spacing="10" prefWidth="360">
+            <children>
+                <Label text="Spending Breakdown"
+                       styleClass="subtitle-main"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="monthLabel"
+                       styleClass="text-white"/>
+            </children>
+        </HBox>
+
+        <!-- Month selector centered under header -->
+        <ComboBox fx:id="monthSelector"
+                  prefWidth="120"/>
+
+        <!-- Row 1: Income / Expenses cards -->
+        <HBox spacing="14" prefWidth="360">
+            <children>
+                <VBox spacing="6" prefWidth="170"
+                      styleClass="card-strong">
+                    <children>
+                        <Label text="Income" styleClass="text-white"/>
+                        <Label fx:id="incomeLabel"
+                               style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="6" prefWidth="170"
+                      styleClass="card-strong">
+                    <children>
+                        <Label text="Expenses" styleClass="text-white"/>
+                        <Label fx:id="expensesLabel"
+                               style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- Row 2: Leftover / Savings this month -->
+        <HBox spacing="14" prefWidth="360">
+            <children>
+                <VBox spacing="6" prefWidth="170"
+                      styleClass="card">
+                    <children>
+                        <Label text="Leftover" styleClass="text-white"/>
+                        <Label fx:id="leftoverLabel"
+                               style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+                    </children>
+                </VBox>
+
+                <VBox spacing="6" prefWidth="170"
+                      styleClass="card">
+                    <children>
+                        <Label text="Savings this month" styleClass="text-white"/>
+                        <TextField fx:id="savingsInputField"
+                                   promptText="400"
+                                   styleClass="input-field-large"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- Big card: Left after savings -->
+        <VBox spacing="6"
+              prefWidth="360"
+              styleClass="card-strong">
+            <children>
+                <Label text="Left after savings"
+                       styleClass="text-white"/>
+                <Label fx:id="leftAfterSavingsLabel"
+                       style="-fx-text-fill:white; -fx-font-weight:bold; -fx-font-size:18;"/>
+            </children>
+        </VBox>
+
+        <!-- Adjust button -->
+        <Button text="Adjust Savings"
+                onAction="#handleAdjustSavings"
+                styleClass="accent-button"/>
+
+        <!-- Navigation buttons -->
+        <HBox spacing="12">
+            <children>
+                <Button text="Next"
+                        onAction="#handleNext"
+                        styleClass="primary-button"/>
+                <Button text="Back"
+                        onAction="#handleBack"
+                        styleClass="secondary-button"/>
+            </children>
+        </HBox>
+
+    </children>
+</VBox>

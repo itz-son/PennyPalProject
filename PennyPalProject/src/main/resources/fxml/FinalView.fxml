@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.FinalViewController"
+      spacing="20"
+      styleClass="app-root">
+    <children>
+        <StackPane>
+            <children>
+                <Circle radius="60" fill="#F6A623" stroke="#C97800" strokeWidth="4"
+                        styleClass="coin-circle"/>
+                <Label text="👋" style="-fx-font-size:36;"/>
+            </children>
+        </StackPane>
+
+        <Label text="You can close this now"
+               styleClass="title-main"/>
+
+        <Label text="Thanks for trying Penny Pal!"
+               styleClass="text-white"/>
+
+        <Label text="Press Esc or close the window."
+               styleClass="text-white"/>
+
+        <Button text="Back to Welcome"
+                onAction="#handleBackToWelcome"
+                styleClass="white-pill-button"/>
+    </children>
+</VBox>

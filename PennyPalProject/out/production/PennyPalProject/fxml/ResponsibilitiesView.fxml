@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.ResponsibilitiesViewController"
+      styleClass="app-root">
+    <children>
+        <Label text="Answer" styleClass="subtitle-main"/>
+        <Label text="Responsibility Questions" styleClass="title-main"/>
+
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <Label text="Rent" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="rentField" promptText="0"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+
+                <Label text="Utilities" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="utilitiesField" promptText="0"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+
+                <Label text="Insurance" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="insuranceField" promptText="0"
+                           GridPane.rowIndex="2" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+
+                <Label text="Student Loan" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="studentLoanField" promptText="0"
+                           GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+
+                <Label text="Transportation" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="transportationField" promptText="0"
+                           GridPane.rowIndex="4" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+
+                <Label text="Other" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       styleClass="text-white"/>
+                <TextField fx:id="otherField" promptText="0"
+                           GridPane.rowIndex="5" GridPane.columnIndex="1"
+                           styleClass="input-field"/>
+            </children>
+        </GridPane>
+
+        <Label fx:id="errorLabel" textFill="red"/>
+
+        <Button text="Next"
+                onAction="#handleNext"
+                styleClass="primary-button"/>
+
+        <Button text="Back"
+                onAction="#handleBack"
+                styleClass="secondary-button"/>
+    </children>
+</VBox>

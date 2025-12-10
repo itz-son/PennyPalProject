@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pennypal.view.IncomeViewController"
+      spacing="20"
+      styleClass="app-root">
+    <children>
+        <Label text="Enter" styleClass="subtitle-main"/>
+        <Label text="Monthly income" styleClass="title-main"/>
+
+        <VBox styleClass="card-strong">
+            <children>
+                <Label text="Monthly income" styleClass="text-white"/>
+                <TextField fx:id="incomeField" promptText="3,500"
+                           styleClass="input-field-large"/>
+            </children>
+        </VBox>
+
+        <Label fx:id="errorLabel" textFill="red"/>
+
+        <Button text="Next"
+                onAction="#handleNext"
+                styleClass="primary-button"/>
+
+        <Button text="Back"
+                onAction="#handleBack"
+                styleClass="secondary-button"/>
+    </children>
+</VBox>
