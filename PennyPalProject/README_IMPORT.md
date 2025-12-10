@@ -129,8 +129,7 @@ The app should open with the full styled interface.
 
 # 📐 UML Diagram
 
-Include your diagram file here once exported (e.g., from draw.io):  
-`docs/penny_pal_uml.png`
+[PennyPal(1).drawio](https://github.com/user-attachments/files/24070369/PennyPal.1.drawio)
 
 ---
 
